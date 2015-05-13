@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Xxy-IY-Mqk">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="sr3-hq-5W8">
+            <objects>
+                <navigationController id="Xxy-IY-Mqk" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="diI-jP-FDR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="5LL-2B-OGB" kind="relationship" relationship="rootViewController" id="j5v-Ob-ilS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GYD-MS-waV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-31" y="717"/>
+        </scene>
+        <!--Me-->
+        <scene sceneID="et6-30-QSL">
+            <objects>
+                <viewController id="5LL-2B-OGB" customClass="MeViewController" customModule="SoundCloudDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vFu-nC-IXj"/>
+                        <viewControllerLayoutGuide type="bottom" id="DiU-Jq-JVU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vBW-dW-ToA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvH-6Q-u8z">
+                                <rect key="frame" x="16" y="86" width="81" height="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URI:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTp-uN-NbK">
+                                <rect key="frame" x="16" y="114" width="32" height="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ug-JO-5KQ" userLabel="URI Label">
+                                <rect key="frame" x="56" y="134" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00Y-R9-7Rf" userLabel="Name Label">
+                                <rect key="frame" x="105" y="106" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="NTp-uN-NbK" firstAttribute="top" secondItem="MvH-6Q-u8z" secondAttribute="bottom" constant="8" id="13U-in-n64"/>
+                            <constraint firstItem="MvH-6Q-u8z" firstAttribute="top" secondItem="vFu-nC-IXj" secondAttribute="bottom" constant="22" id="544-F0-ENK"/>
+                            <constraint firstItem="9ug-JO-5KQ" firstAttribute="leading" secondItem="NTp-uN-NbK" secondAttribute="trailing" constant="8" symbolic="YES" id="7fV-5y-4r7"/>
+                            <constraint firstItem="MvH-6Q-u8z" firstAttribute="baseline" secondItem="00Y-R9-7Rf" secondAttribute="baseline" id="ekU-Vm-vgY"/>
+                            <constraint firstItem="00Y-R9-7Rf" firstAttribute="leading" secondItem="MvH-6Q-u8z" secondAttribute="trailing" constant="8" id="gOc-pM-h6k"/>
+                            <constraint firstItem="NTp-uN-NbK" firstAttribute="baseline" secondItem="9ug-JO-5KQ" secondAttribute="baseline" id="ih9-iU-F9j"/>
+                            <constraint firstItem="MvH-6Q-u8z" firstAttribute="leading" secondItem="vBW-dW-ToA" secondAttribute="leadingMargin" id="m1B-K7-rQB"/>
+                            <constraint firstItem="NTp-uN-NbK" firstAttribute="leading" secondItem="vBW-dW-ToA" secondAttribute="leadingMargin" id="qcy-1w-7IX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Me" id="h75-DM-opi">
+                        <barButtonItem key="rightBarButtonItem" title="Login" id="dBS-pU-QpY">
+                            <connections>
+                                <segue destination="nU2-7l-Tam" kind="presentation" identifier="LoginSegue" id="FDk-zU-UI4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="uriLabel" destination="9ug-JO-5KQ" id="DjB-33-WsD"/>
+                        <outlet property="usernameLabel" destination="00Y-R9-7Rf" id="2bM-W3-7vA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FRL-IW-DTK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="636" y="715"/>
+        </scene>
+        <!--Sound Cloud Login View Controller-->
+        <scene sceneID="kCQ-Uv-Cdb">
+            <objects>
+                <viewController id="nU2-7l-Tam" customClass="SoundCloudLoginViewController" customModule="SoundCloudDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KB5-29-K7m"/>
+                        <viewControllerLayoutGuide type="bottom" id="aw3-ov-Qob"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UiP-1E-oTH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a8l-3G-RWp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1331" y="717"/>
+        </scene>
+    </scenes>
+</document>
