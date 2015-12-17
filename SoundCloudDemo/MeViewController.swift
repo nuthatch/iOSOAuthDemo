@@ -43,12 +43,12 @@ class MeViewController: UIViewController, SoundCloudLoginResultsDelegate {
 
     private func requestMe(token: String) {
         let url = NSURL(string: "https://api.soundcloud.com/me.json?oauth_token=\(token)")!
-        let request = NSURLRequest(URL: url)
+        //let request = NSURLRequest(URL: url)
         let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
                                    delegate: nil, delegateQueue: NSOperationQueue.mainQueue())
 
         let dataTask = session.dataTaskWithURL(url) { (data, response, error) -> Void in
-            if let jsonOutput = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String:AnyObject] {
+            if let jsonOutput = (try? NSJSONSerialization.JSONObjectWithData(data!, options: [])) as? [String:AnyObject] {
                 self.displayMe(jsonOutput)
             }
         }

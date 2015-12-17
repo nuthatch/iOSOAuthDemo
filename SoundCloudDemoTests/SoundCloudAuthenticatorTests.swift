@@ -8,7 +8,7 @@ class SoundCloudAuthenticatorTests: XCTestCase {
     func testBuildURL() {
         let url = subject().buildLoginURL()
 
-        XCTAssertEqual(url.absoluteString!,
+        XCTAssertEqual(url.absoluteString,
             "https://soundcloud.com/connect?client_id=foo&client_secret=bar&redirect_uri=foo://sample&response_type=token&display=popup",
             "Login URL incorrect")
     }
@@ -44,7 +44,7 @@ class SoundCloudAuthenticatorTests: XCTestCase {
 
     func testResultSuccessWithCode() {
         let url = NSURL(string: "foo://scsample?code=e99fa100e527ff5ae932b54c004ba476#")!
-        let result = subject(type: OAuthResponseType.Code).resultFromAuthenticationResponse(url)!
+        let result = subject(AuthResponseType.Code).resultFromAuthenticationResponse(url)!
 
         XCTAssertEqual(result.responseType, OAuthResponseType.Code, "Code URL should have code type")
         XCTAssertEqual(result.value, "e99fa100e527ff5ae932b54c004ba476", "Code URL should have code type")
@@ -52,7 +52,7 @@ class SoundCloudAuthenticatorTests: XCTestCase {
 
     func testResultFailedWithMalformedCode() {
         let url = NSURL(string: "foo://scsample?NOCODE=e99fa100e527ff5ae932b54c004ba476&blah#")!
-        let result = subject(type: OAuthResponseType.Code).resultFromAuthenticationResponse(url)
+        let result = subject(type: ResponseType.Code).resultFromAuthenticationResponse(url)
 
         XCTAssertTrue(result == nil, "Malformed code URL should return no response")
     }
